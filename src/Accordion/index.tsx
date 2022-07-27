@@ -6,24 +6,14 @@ import './illustration.css';
 export default function Accordion() {
     return (
         <div className="accordion">
-            <div className="illustration__container relative">
+            <section>
                 <div className="illustration__container-mobile relative">
-                    {/* <img
-                    style={{
-                        display: 'none',
-                    }}
-                    width={'65%'}
-                    src="/illustration-woman-online-mobile.svg"
-                    alt=""
-                /> */}
-
                     <img
                         style={{
                             top: '0',
                         }}
                         width={'65%'}
                         src="/illustration-woman-online-mobile.svg"
-                        alt=""
                         className="absolute"
                     />
                     <img
@@ -32,13 +22,11 @@ export default function Accordion() {
                             top: '40px',
                         }}
                         src="/bg-pattern-mobile.svg"
-                        alt=""
-                        className=""
                     />
                 </div>
-            </div>
+            </section>
 
-            <div>
+            <section>
                 <h1 className="accordion__heading">FAQ</h1>
                 <div className="accordion__container">
                     <AccordionItem
@@ -68,7 +56,7 @@ export default function Accordion() {
                 normal business hours."
                     />
                 </div>
-            </div>
+            </section>
         </div>
     );
 }
