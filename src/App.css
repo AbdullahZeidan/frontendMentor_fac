@@ -31,6 +31,14 @@ body {
     place-content: center;
 }
 
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
 .attribution {
     margin-top: 5rem;
     font-size: 11px;

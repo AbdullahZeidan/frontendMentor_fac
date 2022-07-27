@@ -1,0 +1,22 @@
+.illustration__container-mobile {
+    width: 100%;
+    height: 10px;
+    margin-inline: auto;
+    margin-bottom: 12rem;
+}
+
+.illustration__container-mobile img {
+    transform: translateX(25%) translateY(-60%);
+    left: 0;
+    top: 0;
+}
+
+.illustration__container-mobile img:nth-child(2) {
+    transform: translateX(25%) translateY(-5%);
+}
+
+@media screen and (min-width: 1200px) {
+    .illustration__container-mobile {
+        display: none;
+    }
+}
