@@ -4,8 +4,10 @@ h1 {
 
 .accordion {
     padding: 2em;
-    background-color: white;
     border-radius: 1rem;
+    background-color: white;
+
+    max-width: 400px;
 }
 
 .accordionItem {
@@ -22,7 +24,7 @@ h1 {
 
     transition: color 200ms ease;
 }
-.accordionItem:hover > .accordionTitle {
+.accordionTitle:hover {
     color: var(--text-primary-400);
 }
 
@@ -32,20 +34,27 @@ h1 {
 
 .accordionBody {
     margin: 0;
-    max-width: 80%;
+    max-width: 85%;
     overflow: hidden;
 
     font-size: 1.25rem;
+    line-height: 2rem;
     color: var(--text-neutral-700);
 
-    transition: all 250ms ease;
+    transition: height 250ms ease;
 }
 
 .chevron {
     margin-left: auto;
-
     transition: transform 200ms ease;
 }
 .accordionItem--active .chevron {
     transform: rotate(180deg);
+}
+
+@media screen and (min-width: 1280px) {
+    .accordion {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }

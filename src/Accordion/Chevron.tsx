@@ -1,16 +1,7 @@
 import React from 'react';
 import './Accordion.css';
+import chevronImg from '../chevron.svg';
 
 export default function Chevron() {
-    return (
-        <svg className="chevron" width="10" height="7" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M1 .799l4 4 4-4"
-                stroke="#F47B56"
-                strokeWidth="2"
-                fill="none"
-                fillRule="evenodd"
-            />
-        </svg>
-    );
+    return <img className="chevron" width={16} src={chevronImg} alt="show/hide" />;
 }
