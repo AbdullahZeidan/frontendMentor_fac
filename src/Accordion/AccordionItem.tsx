@@ -43,13 +43,15 @@ export default function AccordionItem({ title, body }: AccordionItemProps) {
     }
 
     return (
-        <div className={clsx('accordionItem', expanded ? 'accordionItem--active' : '')}>
-            <h2 className="accordionTitle" onClick={() => setExpanded(!expanded)}>
+        <div
+            className={clsx('accordion__item', expanded ? 'accordion__item--active' : '')}
+        >
+            <h2 className="accordion__title" onClick={() => setExpanded(!expanded)}>
                 {title} <Chevron />
             </h2>
             <p
                 ref={bodyRef}
-                className="accordionBody"
+                className="accordion__body"
                 onTransitionEnd={() => resetInlineHeight(bodyRef.current!)}
             >
                 {body}

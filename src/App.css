@@ -31,11 +31,8 @@ body {
     place-content: center;
 }
 
-.text-center {
-    text-align: center;
-}
-
 .attribution {
+    margin-top: 5rem;
     font-size: 11px;
     text-align: center;
 }
