@@ -1,8 +1,6 @@
 .illustration__container-mobile {
     width: 100%;
-    height: 10px;
     margin-inline: auto;
-    margin-bottom: 12rem;
 }
 
 .illustration__container-mobile img {
@@ -15,8 +13,40 @@
     transform: translateX(25%) translateY(-15%);
 }
 
+.illustration__container-desktop {
+    display: none;
+    isolation: isolate;
+}
+.illustration-woman {
+    position: relative;
+    left: -15%;
+}
+
+.pattern-desktop {
+    position: absolute;
+    top: -40%;
+    left: -120%;
+    z-index: -1;
+}
+
+.illustration__container-desktop .box {
+    position: absolute;
+    left: -20%;
+    bottom: 25%;
+}
+.clipper {
+    display: flex;
+    align-items: center;
+}
+
 @media screen and (min-width: 1200px) {
     .illustration__container-mobile {
         display: none;
+    }
+    .illustration__container-desktop {
+        min-height: 100%;
+
+        display: flex;
+        align-items: stretch;
     }
 }

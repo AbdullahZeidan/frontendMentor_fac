@@ -1,19 +1,27 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import Chevron from './Chevron';
 
 type AccordionItemProps = {
     title: string;
+    index: number;
     body: React.ReactNode;
+    active?: boolean;
+    onToggle: (idx: number) => void;
 };
-export default function AccordionItem({ title, body }: AccordionItemProps) {
-    const [expanded, setExpanded] = useState(false);
+export default function AccordionItem({
+    title,
+    index,
+    body,
+    active,
+    onToggle,
+}: AccordionItemProps) {
     const bodyRef = useRef<HTMLParagraphElement>(null);
 
     useEffect(() => {
-        if (!expanded) collapseAccordion(bodyRef.current!);
+        if (!active) collapseAccordion(bodyRef.current!);
         else expandAccordion(bodyRef.current!);
-    }, [expanded]);
+    }, [active]);
 
     function collapseAccordion(bodyEl: HTMLParagraphElement) {
         const elementHeight = bodyEl.scrollHeight;
@@ -37,16 +45,14 @@ export default function AccordionItem({ title, body }: AccordionItemProps) {
     }
 
     function resetInlineHeight(bodyEl: HTMLParagraphElement) {
-        if (expanded) {
+        if (active) {
             bodyEl.style.height = '';
         }
     }
 
     return (
-        <div
-            className={clsx('accordion__item', expanded ? 'accordion__item--active' : '')}
-        >
-            <h2 className="accordion__title" onClick={() => setExpanded(!expanded)}>
+        <div className={clsx('accordion__item', active ? 'accordion__item--active' : '')}>
+            <h2 className="accordion__title" onClick={() => onToggle(index)}>
                 {title} <Chevron />
             </h2>
             <p

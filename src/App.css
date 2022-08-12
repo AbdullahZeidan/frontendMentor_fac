@@ -34,16 +34,26 @@ body {
 .relative {
     position: relative;
 }
-
 .absolute {
     position: absolute;
 }
 
+.w-100 {
+    width: 100%;
+}
+.h-100 {
+    height: 100%;
+}
+
 .attribution {
-    margin-top: 5rem;
+    position: absolute;
+    inset: auto 0 0 0;
     font-size: 11px;
     text-align: center;
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+.overflow-wrap {
+    overflow: hidden;
 }
